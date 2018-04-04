@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Button from './Button';
 
-class Buttonbox extends Component {
+class ButtonContainer extends Component {
     render() {
         return (
             <div>
@@ -13,4 +13,4 @@ class Buttonbox extends Component {
     }
 }
 
-export default Buttonbox;
+export default ButtonContainer;
