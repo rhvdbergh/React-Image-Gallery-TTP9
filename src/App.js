@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Search from './Component/Search.js';
 import Buttonbox from './Component/Buttonbox.js';
 import Title from './Component/Title.js';
-import Gallerybox from './Component/Gallerybox.js';
+import PhotoContainer from './Component/PhotoContainer.js';
 import './App.css';
 
 class App extends Component {
@@ -12,7 +12,7 @@ class App extends Component {
         <Search />
         <Buttonbox />
         <Title />
-        <Gallerybox />
+        <PhotoContainer />
       </div>
     );
   }

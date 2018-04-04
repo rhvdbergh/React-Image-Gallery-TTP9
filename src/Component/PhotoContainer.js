@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Photo from './Photo.js';
 
-class Gallerybox extends Component {
+class PhotoContainer extends Component {
     render() {
         return (
             <div>
@@ -14,4 +14,4 @@ class Gallerybox extends Component {
     }
 }
 
-export default Gallerybox;
+export default PhotoContainer;
