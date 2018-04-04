@@ -5,7 +5,7 @@ class Search extends Component {
         return (
             <form>
             <input className='Search' placeholder='Search ...'/>
-             <button className='SearchButton'></button>
+             <button className='SearchButton'>{'\u{1F50D}'}</button>
              </form>
         )
     }
