@@ -5,7 +5,7 @@ import Title from './Component/Title.js';
 import PhotoContainer from './Component/PhotoContainer.js';
 import ErrNoMatch from './Component/ErrNoMatch.js';
 import { BrowserRouter, Route, NavLink, Switch } from 'react-router-dom';
-import './App.css';
+import './css/App.css';
 
 class App extends Component {
   render() {
