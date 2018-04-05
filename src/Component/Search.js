@@ -4,7 +4,7 @@ class Search extends Component {
     render() {
         return (
             <form>
-                <input className='Search' placeholder='Search ...'/>
+                <input className='Search' type="search" placeholder='Search ...'/>
                 <button className='SearchButton'>{'\u{1F50D}'}</button>
             </form>
         )
