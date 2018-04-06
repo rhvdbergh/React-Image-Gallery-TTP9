@@ -1,10 +1,26 @@
+body {
+    font-family: 'OPen Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    color: #3f4850;
+    margin: 50px 0 30px;
+}
+
+button {
+    cursor: pointer;
+}
+
 .App {
     text-align: center;
 }
 
 .SearchContainer {
-    margin: 0 auto 32px;
-    padding: 10px 15px;
+    margin: 32px auto 10px;
     max-width: 460px;
     display: flex;
 }
@@ -22,7 +38,6 @@
 }
 
 .SearchButton {
-    cursor: pointer;
     padding: 10px 15px;
     margin: 32px auto 32px;
     border-right: 3px solid #438bbd;
@@ -39,4 +54,21 @@
 .SearchButton:hover {
     background-color: #275270;
     border-color: #275270;
+}
+
+.ButtonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.Button {
+    background-color: #438bbd;
+    border-radius: 0.35em;
+    color: #fff;
+    padding: 5px;
+    font-size: 1em;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100px;
+    border: none;
 }

@@ -4,7 +4,7 @@ import Button from './Button';
 class ButtonContainer extends Component {
     render() {
         return (
-            <div>
+            <div className="ButtonContainer">
             <Button />
             <Button />
             <Button />    
