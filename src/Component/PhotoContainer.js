@@ -4,7 +4,7 @@ import Photo from './Photo.js';
 class PhotoContainer extends Component {
     render() {
         return (
-            <div>
+            <div className="PhotoContainer">
                 <Photo />
                 <Photo />
                 <Photo />

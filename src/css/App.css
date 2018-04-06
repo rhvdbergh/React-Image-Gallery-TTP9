@@ -72,3 +72,22 @@ button {
     width: 100px;
     border: none;
 }
+
+.PhotoContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: space-between;
+}
+
+.Photo {
+    width: 220px;
+    height: 165px;
+    padding: 10px;
+    overflow: hidden;
+    transition: transform 0.75s;
+}
+
+.Photo:hover {
+    transform: scale(1.15);
+}
