@@ -6,6 +6,7 @@ import PhotoContainer from './Component/PhotoContainer.js';
 import ErrNoMatch from './Component/ErrNoMatch.js';
 import { BrowserRouter, Route, NavLink, Switch } from 'react-router-dom';
 import './css/App.css';
+import apiKey from './config.js';
 
 class App extends Component {
   render() {

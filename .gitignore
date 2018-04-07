@@ -22,3 +22,4 @@ yarn-error.log*
 
 /mockup
 .vscode/
+config.js
