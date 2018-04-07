@@ -15,6 +15,14 @@ button {
     cursor: pointer;
 }
 
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: list-item;
+}
+
 .App {
     text-align: center;
 }
@@ -51,13 +59,15 @@ button {
     stroke-width: 3;
 }
 
-.SearchButton:hover {
+.SearchButton:hover,
+.Button:hover {
     background-color: #275270;
     border-color: #275270;
 }
 
 .ButtonContainer {
     display: flex;
+    flex-flow: row wrap;
     justify-content: center;
 }
 
@@ -69,6 +79,7 @@ button {
     font-size: 1em;
     margin-left: 10px;
     margin-right: 10px;
+    margin-bottom: 10px;
     width: 100px;
     border: none;
 }
@@ -76,16 +87,25 @@ button {
 .PhotoContainer {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
-    align-content: space-between;
+    justify-content: space-between;
+}
+
+.PhotoContainer ul {
+    overflow: hidden;
+}
+
+.PhotoLi {
+    width: 220px;
+    height: 165px;
+    margin-bottom: 15px;
+    display: list-item;
+    list-style-type: none;
+    overflow: hidden;
 }
 
 .Photo {
-    width: 220px;
-    height: 165px;
-    padding: 10px;
-    overflow: hidden;
     transition: transform 0.75s;
+    transform-origin: 50% 50%;
 }
 
 .Photo:hover {

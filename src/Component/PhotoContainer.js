@@ -4,11 +4,13 @@ import Photo from './Photo.js';
 class PhotoContainer extends Component {
     render() {
         return (
-            <div className="PhotoContainer">
-                <Photo />
-                <Photo />
-                <Photo />
-                <Photo />            
+            <div>
+                <ul className="PhotoContainer">
+                    <Photo />
+                    <Photo />
+                    <Photo />
+                    <Photo />       
+                </ul>     
             </div>            
         );
     }

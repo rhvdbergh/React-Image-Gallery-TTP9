@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Search from './Component/Search.js';
-import ButtonContainer from './Component/ButtonContainer.js';
+import Navigation from './Component/Navigation.js';
 import Title from './Component/Title.js';
 import PhotoContainer from './Component/PhotoContainer.js';
 import ErrNoMatch from './Component/ErrNoMatch.js';
@@ -25,7 +25,7 @@ class MainWindow extends Component {
     return (
       <div className="App">
         <Search />
-        <ButtonContainer />
+        <Navigation />
         <Title />
         <PhotoContainer />
       </div>

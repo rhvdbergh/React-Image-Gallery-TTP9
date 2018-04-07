@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Button from './Button';
 
-class ButtonContainer extends Component {
+class Navigation extends Component {
     render() {
         return (
-            <div className="ButtonContainer">
+            <div className="Navigation">
             <Button />
             <Button />
             <Button />    
@@ -13,4 +13,4 @@ class ButtonContainer extends Component {
     }
 }
 
-export default ButtonContainer;
+export default Navigation;
