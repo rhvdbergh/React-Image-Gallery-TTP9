@@ -17,6 +17,8 @@ button {
 
 ul {
     list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 li {
@@ -87,6 +89,8 @@ li {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    max-width: 960px;
+    margin: auto;
 }
 
 .PhotoContainer ul {
