@@ -5,9 +5,9 @@ class Navigation extends Component {
     render() {
         return (
             <div className="Navigation">
-            <Button />
-            <Button />
-            <Button />    
+            <Button searchTerm="Coffee"/>
+            <Button searchTerm="Tea"/>
+            <Button searchTerm="Bread"/>    
             </div>        
         );
     }

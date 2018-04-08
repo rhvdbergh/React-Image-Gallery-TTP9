@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Search from './Component/Search.js';
 import Navigation from './Component/Navigation.js';
 import Title from './Component/Title.js';
@@ -25,8 +26,8 @@ class MainWindow extends Component {
   render() {
     return (
       <div className="App">
-        <Search />
-        <Navigation />
+       <Search />
+       <Navigation />
         <Title />
         <PhotoContainer />
       </div>
