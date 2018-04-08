@@ -27,6 +27,7 @@ getPhotos(searchTerm) {
     })
     .then(myJson => {
       console.log(myJson);
+      this.setState({photos: myJson});
     });
   }
 
