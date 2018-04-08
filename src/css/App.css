@@ -85,6 +85,10 @@ li {
     border: none;
 }
 
+.Button:focus {
+    outline: 0;
+}
+
 .PhotoContainer {
     display: flex;
     flex-flow: row wrap;
