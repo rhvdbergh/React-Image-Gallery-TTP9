@@ -28,10 +28,14 @@ getPhotos(searchTerm) {
   render() {
     return (
       <BrowserRouter>
-        <Switch>
-          <Route exact path="/" render={(props) => <MainWindow getPhotos={this.getPhotos}/>}/>
-          <Route render={ErrNoMatch}/>
-        </Switch>
+      <div className="App">
+          <Search />
+          <Navigation getPhotos={this.getPhotos}/>
+          <Switch>
+            <Route exact path="/" render={(props) => <MainWindow getPhotos={this.getPhotos}/>}/>
+            <Route render={ErrNoMatch}/>
+          </Switch>
+        </div>
       </BrowserRouter>
     );
   }
@@ -44,9 +48,7 @@ class MainWindow extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Search />
-        <Navigation getPhotos={this.props.getPhotos}/>
+      <div>
         <Title />
         <PhotoContainer />
       </div>
