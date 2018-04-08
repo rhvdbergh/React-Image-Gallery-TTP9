@@ -20,14 +20,13 @@ componentWillMount() {
 }
 
 getPhotos(searchTerm) {
-    console.log('button clicked');
     fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${searchTerm}&per_page=20&format=json&nojsoncallback=1`)
     .then(response => {
       return response.json();
     })
     .then(myJson => {
-      console.log(myJson);
-      this.setState({photos: myJson});
+      let arr = myJson.photos.photo;
+      this.setState({photos: arr});
     });
   }
 
@@ -38,7 +37,14 @@ getPhotos(searchTerm) {
           <Search />
           <Navigation getPhotos={this.getPhotos}/>
           <Switch>
-            <Route exact path="/" render={(props) => <MainWindow getPhotos={this.getPhotos}/>}/>
+            <Route exact path="/" 
+              render={(props) => 
+                <MainWindow 
+                  getPhotos={this.getPhotos}
+                  photos={this.state.photos} 
+                />
+              }   
+            /> 
             <Route render={ErrNoMatch}/>
           </Switch>
         </div>
@@ -51,19 +57,20 @@ class MainWindow extends Component {
   constructor(props) {
     super(props);
   }
-
+  
   render() {
     return (
       <div>
         <Title />
-        <PhotoContainer />
+        <PhotoContainer photos={this.props.photos} />
       </div>
     );
   }
 }
 
 MainWindow.propTypes = {
-  getPhotos: PropTypes.func.isRequired
+  getPhotos: PropTypes.func.isRequired,
+  photos: PropTypes.array.isRequired
 }
 
 export default App;

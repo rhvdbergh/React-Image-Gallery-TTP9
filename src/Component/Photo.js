@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Photo extends Component {
     render() {
@@ -8,6 +9,10 @@ class Photo extends Component {
             </li>         
         );
     }
+}
+
+Photo.propTypes = {
+    photoURL: PropTypes.string.isRequired
 }
 
 export default Photo;
