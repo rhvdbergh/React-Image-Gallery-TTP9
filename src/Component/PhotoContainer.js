@@ -8,7 +8,7 @@ class PhotoContainer extends Component {
     //   }
 
     populatePhotos = this.props.photos.map((photo, index) => {
-        return <Photo key={index} photoURL={`https://farm${this.props.photos[0].farm}.staticflickr.com/${this.props.photos[0].server}/${this.props.photos[0].id}_${this.props.photos[0].secret}.jpg`} />
+        return <Photo key={index} photoURL={`https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`} />
     });
 
     render() {
@@ -16,7 +16,6 @@ class PhotoContainer extends Component {
             <div>
                 <ul className="PhotoContainer">
                     {this.populatePhotos}
-                    {/* <Photo key="1" photoURL={`https://farm${this.props.photos[0].farm}.staticflickr.com/${this.props.photos[0].server}/${this.props.photos[0].id}_${this.props.photos[0].secret}.jpg`} /> */}
                 </ul>     
             </div>            
         );

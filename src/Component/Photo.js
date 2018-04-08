@@ -5,14 +5,13 @@ class Photo extends Component {
     render() {
         return (
             <li className="PhotoLi">
-                <img className="Photo" src='https://placeimg.com/320/240/any'/>  
+                <img className="Photo" src={this.props.photoURL}/>  
             </li>         
         );
     }
 }
 
 Photo.propTypes = {
-    key: PropTypes.number.isRequired,
     photoURL: PropTypes.string.isRequired
 }
 
