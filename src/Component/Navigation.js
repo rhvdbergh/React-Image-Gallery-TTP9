@@ -1,16 +1,25 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Button from './Button';
 
 class Navigation extends Component {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return (
             <div className="Navigation">
-            <Button searchTerm="Coffee"/>
-            <Button searchTerm="Tea"/>
-            <Button searchTerm="Bread"/>    
+                <Button searchTerm="Coffee" getPhotos={this.props.getPhotos}/>
+                <Button searchTerm="Tea" getPhotos={this.props.getPhotos}/>
+                <Button searchTerm="Bread" getPhotos={this.props.getPhotos}/>    
             </div>        
         );
     }
+}
+
+Navigation.propTypes = {
+    getPhotos: PropTypes.func.isRequired
 }
 
 export default Navigation;

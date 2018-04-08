@@ -10,12 +10,27 @@ import './css/App.css';
 import apiKey from './config.js';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+getPhotos(searchTerm) {
+    console.log('button clicked');
+    fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${searchTerm}&per_page=20&format=json&nojsoncallback=1`)
+    .then(response => {
+      return response.json();
+    })
+    .then(myJson => {
+      console.log(myJson);
+    });
+  }
+
   render() {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={MainWindow}/>
-          <Route component={ErrNoMatch}/>
+          <Route exact path="/" render={(props) => <MainWindow getPhotos={this.getPhotos}/>}/>
+          <Route render={ErrNoMatch}/>
         </Switch>
       </BrowserRouter>
     );
@@ -23,16 +38,24 @@ class App extends Component {
 }
 
 class MainWindow extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div className="App">
-       <Search />
-       <Navigation />
+        <Search />
+        <Navigation getPhotos={this.props.getPhotos}/>
         <Title />
         <PhotoContainer />
       </div>
     );
   }
+}
+
+MainWindow.propTypes = {
+  getPhotos: PropTypes.func.isRequired
 }
 
 export default App;
