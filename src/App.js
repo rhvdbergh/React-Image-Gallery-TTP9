@@ -12,7 +12,12 @@ import apiKey from './config.js';
 class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {photos: []};
   }
+
+componentWillMount() {
+  this.setState({photos: this.getPhotos('Coffee')});
+}
 
 getPhotos(searchTerm) {
     console.log('button clicked');
