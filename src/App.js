@@ -38,11 +38,14 @@ getPhotos(searchTerm) {
           <Navigation getPhotos={this.getPhotos}/>
           <Switch>
             <Route exact path="/" 
-              render={(props) => 
-                <MainWindow 
-                  getPhotos={this.getPhotos}
-                  photos={this.state.photos} 
-                />
+              render={this.state.photos? (props) => 
+                  <MainWindow 
+                    getPhotos={this.getPhotos}
+                    photos={this.state.photos} 
+                  />
+                  :
+                  () => <h1>Loading</h1>
+                 
               }   
             /> 
             <Route render={ErrNoMatch}/>
