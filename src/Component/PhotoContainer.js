@@ -11,9 +11,11 @@ class PhotoContainer extends Component {
         
         // populatePhotos = () => {console.log('the photos received', this.props.photos)}
       if (this.props.photos) {
-            let populatePhotos = (() => this.props.photos.map((photo, index) => {
-                
-            }));
+            let populatePhotos = () => this.props.photos.map((photo, index) => {
+                return (
+                    <Photo key={index} photoURL={`https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`} />
+                );
+            });
         } else {
             let populatePhotos = (() => <h1>Loading...</h1>);
         }
@@ -27,6 +29,7 @@ class PhotoContainer extends Component {
             <div>
                 <ul className="PhotoContainer">
                     {this.populatePhotos}
+                    {/* <Photo key="1" photoURL={`https://farm${this.props.photos[0].farm}.staticflickr.com/${this.props.photos[0].server}/${this.props.photos[0].id}_${this.props.photos[0].secret}.jpg`} /> */}
                 </ul>     
             </div>            
         );

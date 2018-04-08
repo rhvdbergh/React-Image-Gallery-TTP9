@@ -12,6 +12,7 @@ class Photo extends Component {
 }
 
 Photo.propTypes = {
+    key: PropTypes.number.isRequired,
     photoURL: PropTypes.string.isRequired
 }
 
