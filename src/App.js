@@ -62,7 +62,7 @@ class MainWindow extends Component {
       <div>
         <Search getPhotos={this.props.getPhotos}/>
           <Navigation getPhotos={this.props.getPhotos}/>
-        <Title title={this.props.title}/>
+        {this.props.photos.length? <Title title={this.props.title} /> : <Title title={`${this.props.title}: No results found`} noResults={true} />}
         <PhotoContainer photos={this.props.photos} />
       </div>
     );
