@@ -7,7 +7,7 @@ class PhotoContainer extends Component {
         let populatePhotos = this.props.photos.map((photo, index) => { //update photo urls to latest fetch
             return <Photo 
                         key={index} 
-                        photoURL={`https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`} 
+                        photoURL={`https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_m.jpg`} 
                         
                         photoDescripton={photo.title} // for use in the alt property in the photo
                     />
