@@ -5,7 +5,7 @@ class Title extends Component {
     render() {
         return ( <div>
                     <h1>{this.props.title}</h1> 
-                    {this.props.noResults? <h2>No results</h2> : <h2 />}
+                    {this.props.noResults? <h2>Your search did not return any results. Please try again.</h2> : <h2 />}
             </div>
         );
     }
