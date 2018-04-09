@@ -17,7 +17,7 @@ class App extends Component {
   }
 
 componentWillMount() {
-  this.setState({photos: this.getPhotos('bread')});
+  this.setState({photos: this.getPhotos('coffee')});
 }
 
 getPhotos(searchTerm) {
@@ -26,9 +26,7 @@ getPhotos(searchTerm) {
       return response.json();
     })
     .then(myJson => {
-      console.log('made it this far!');
       let arr = myJson.photos.photo;
-      console.log(arr);
       this.setState({photos: arr});
     });
   }
@@ -48,7 +46,6 @@ getPhotos(searchTerm) {
                   />
                   :
                   () => <h1>Loading ...</h1>
-                 
               }   
             /> 
             <Route render={ErrNoMatch}/>

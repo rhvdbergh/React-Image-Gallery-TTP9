@@ -8,7 +8,7 @@ class Button extends Component {
 
     render() {
         return (
-            <button className="Button" onClick={() => {console.log('clicked', this.props.searchTerm); this.props.getPhotos(this.props.searchTerm)}}>{this.props.searchTerm}</button>            
+            <button className="Button" onClick={() => this.props.getPhotos(this.props.searchTerm)}>{this.props.searchTerm}</button>            
         );
     }
 }
