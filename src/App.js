@@ -36,8 +36,6 @@ getPhotos(searchTerm) {
     return (
       <BrowserRouter>
       <div className="App">
-          <Search />
-          <Navigation getPhotos={this.getPhotos}/>
           <Switch>
             <Route exact path="/" 
               render={this.state.photos? (props) => 
@@ -50,7 +48,7 @@ getPhotos(searchTerm) {
                   () => <h1>Loading ...</h1>
               }   
             /> 
-            <Route render={ErrNoMatch}/>
+            <Route component={ErrNoMatch}/>
           </Switch>
         </div>
       </BrowserRouter>
@@ -66,6 +64,8 @@ class MainWindow extends Component {
   render() {
     return (
       <div>
+        <Search />
+          <Navigation getPhotos={this.props.getPhotos}/>
         <Title title={this.props.title}/>
         <PhotoContainer photos={this.props.photos} />
       </div>
