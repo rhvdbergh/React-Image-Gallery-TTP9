@@ -13,10 +13,11 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {photos: []};
+    this.getPhotos = this.getPhotos.bind(this);
   }
 
 componentWillMount() {
-  this.setState({photos: this.getPhotos('Coffee')});
+  this.setState({photos: this.getPhotos('bread')});
 }
 
 getPhotos(searchTerm) {
@@ -25,7 +26,9 @@ getPhotos(searchTerm) {
       return response.json();
     })
     .then(myJson => {
+      console.log('made it this far!');
       let arr = myJson.photos.photo;
+      console.log(arr);
       this.setState({photos: arr});
     });
   }
@@ -44,7 +47,7 @@ getPhotos(searchTerm) {
                     photos={this.state.photos} 
                   />
                   :
-                  () => <h1>Loading</h1>
+                  () => <h1>Loading ...</h1>
                  
               }   
             /> 
