@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 import Button from './Button';
 
 class Navigation extends Component {
     render() {
         return (
             <div className="Navigation">
-                <Button searchTerm="Coffee" getPhotos={this.props.getPhotos}/>
-                <Button searchTerm="Tea" getPhotos={this.props.getPhotos}/>
-                <Button searchTerm="Bread" getPhotos={this.props.getPhotos}/>    
+                <ul>
+                    <li className="button"><Link to="/search/coffee">Coffee</Link></li>
+                    <li><Link to="/search/tea">Tea</Link></li>
+                    <li><Link to="/search/bread">Bread</Link></li>
+                </ul>
             </div>        
         );
     }
