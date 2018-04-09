@@ -64,7 +64,7 @@ class MainWindow extends Component {
   render() {
     return (
       <div>
-        <Search />
+        <Search getPhotos={this.props.getPhotos}/>
           <Navigation getPhotos={this.props.getPhotos}/>
         <Title title={this.props.title}/>
         <PhotoContainer photos={this.props.photos} />

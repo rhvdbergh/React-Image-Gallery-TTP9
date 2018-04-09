@@ -1,10 +1,28 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 
 class Search extends Component {
+    constructor(props) {
+        super(props);
+        this.state={searchTerm: ''}
+        this.getPhotos = this.props.getPhotos;
+    }
+
+    updateSearchTerm(e) {
+        this.setState({searchTerm: e.target.value});
+        console.log('success');
+    }
+
+    updatePhotos(e) {
+        e.preventDefault(); // to stop the page from loading and displaying the default photos
+        this.getPhotos(this.state.searchTerm);
+    }
+
     render() {
         return (
-            <form className='SearchContainer'>
-                <input className='Search' type="search" placeholder='Search ...'/>
+            <form className='SearchContainer' onSubmit={this.updatePhotos.bind(this)}>
+                <input className='Search' type="search" placeholder='Search ...' onChange={this.updateSearchTerm.bind(this)} />
                 <button className='SearchButton'>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" version="1.1" width="24px" height="24px">
                         <g id="surface1">
@@ -15,6 +33,10 @@ class Search extends Component {
             </form>
         )
     }
+}
+
+Search.propTypes = {
+    getPhotos: PropTypes.func.isRequired
 }
 
 export default Search;
