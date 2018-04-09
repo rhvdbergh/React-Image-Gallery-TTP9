@@ -17,6 +17,7 @@ class Search extends Component {
     updatePhotos(e) {
         e.preventDefault(); // to stop the page from loading and displaying the default photos
         this.getPhotos(this.state.searchTerm);
+        e.currentTarget.reset();        
     }
 
     render() {
