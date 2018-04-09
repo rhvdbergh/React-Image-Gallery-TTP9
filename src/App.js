@@ -5,13 +5,13 @@ import Navigation from './Component/Navigation.js';
 import Title from './Component/Title.js';
 import PhotoContainer from './Component/PhotoContainer.js';
 import ErrNoMatch from './Component/ErrNoMatch.js';
-import { BrowserRouter, Route, NavLink, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './css/App.css';
 import apiKey from './config.js';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {photos: [], title: 'Loading ...'};
     this.getPhotos = this.getPhotos.bind(this);
   }
@@ -56,11 +56,7 @@ getPhotos(searchTerm) {
   }
 }
 
-class MainWindow extends Component {
-  constructor(props) {
-    super(props);
-  }
-  
+class MainWindow extends Component {  
   render() {
     return (
       <div>

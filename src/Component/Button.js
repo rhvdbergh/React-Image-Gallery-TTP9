@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Button extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <button className="Button" onClick={() => this.props.getPhotos(this.props.searchTerm)}>{this.props.searchTerm}</button>            

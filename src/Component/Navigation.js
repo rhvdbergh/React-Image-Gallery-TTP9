@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 import Button from './Button';
 
 class Navigation extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div className="Navigation">
