@@ -64,6 +64,7 @@ li {
 .NavButton a:hover {
     background-color: #275270;
     border-color: #275270;
+    transform: scale(1.15);
 }
 
 .Navigation {
@@ -91,6 +92,7 @@ li {
     width: 100px;
     border: none;
     cursor: pointer;
+    transition: transform 0.75s;
 }
 
 .PhotoContainer {
