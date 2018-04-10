@@ -5,7 +5,7 @@ import Navigation from './Component/Navigation.js';
 import Title from './Component/Title.js';
 import PhotoContainer from './Component/PhotoContainer.js';
 import ErrNoMatch from './Component/ErrNoMatch.js';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import './css/App.css';
 import apiKey from './config.js';
 
@@ -37,15 +37,14 @@ getPhotos(searchTerm) {
       <BrowserRouter>
       <div className="App">
           <Switch>
-            <Route exact path="/" 
-              render={ (props) => 
+            <Route exact path="/" render={() => <Redirect to="/search/coffee"/>}/>
+            <Route path="/search/:searchTerm" render={ (props) => 
                   <MainWindow
                     getPhotos={this.getPhotos} 
                     photos={this.state.photos}
                     title={this.state.title}
                     {...props}
                   />
-                  
               }   
             /> 
             <Route component={ErrNoMatch}/>
