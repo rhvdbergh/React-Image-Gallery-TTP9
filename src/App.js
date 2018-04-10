@@ -38,11 +38,12 @@ getPhotos(searchTerm) {
       <div className="App">
           <Switch>
             <Route exact path="/" 
-              component={ () => 
-                  <MainWindow 
-                    getPhotos={this.getPhotos}
-                    photos={this.state.photos} 
+              render={ (props) => 
+                  <MainWindow
+                    getPhotos={this.getPhotos} 
+                    photos={this.state.photos}
                     title={this.state.title}
+                    {...props}
                   />
                   
               }   
@@ -59,6 +60,9 @@ class MainWindow extends Component {
   render() {
     return (
       <div>
+        {/* <h1>Hello: {this.props.match.params.test}</h1> */}
+        {/* <h1>Hello: {this.props}</h1> */}
+        
         <Search getPhotos={this.props.getPhotos}/>
           <Navigation getPhotos={this.props.getPhotos}/>
         {this.props.photos.length? <Title title={this.props.title} /> : <Title title={`${this.props.title}: No results found`} noResults={true} />}
