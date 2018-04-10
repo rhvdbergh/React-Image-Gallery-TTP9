@@ -8,7 +8,7 @@ class Navigation extends Component {
         return (
             <div className="Navigation">
                 <ul>
-                    <li className="button"><Link to="/search/coffee">Coffee</Link></li>
+                    <li><Link to="/search/coffee">Coffee</Link></li>
                     <li><Link to="/search/tea">Tea</Link></li>
                     <li><Link to="/search/bread">Bread</Link></li>
                 </ul>
