@@ -71,7 +71,7 @@ constructor(props) {
     return (
       <div>
         <Search />
-          <Navigation getPhotos={this.props.getPhotos}/>
+          <Navigation />
           {this.props.loading? <h1>Loading ...</h1> : <Title title={this.props.title} />}
         <PhotoContainer photos={this.props.photos} />
       </div>

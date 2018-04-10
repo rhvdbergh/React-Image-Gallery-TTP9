@@ -17,8 +17,4 @@ class Navigation extends Component {
     }
 }
 
-Navigation.propTypes = {
-    getPhotos: PropTypes.func.isRequired
-}
-
 export default withRouter(Navigation);
