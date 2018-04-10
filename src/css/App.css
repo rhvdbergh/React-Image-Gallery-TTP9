@@ -61,20 +61,27 @@ li {
 }
 
 .SearchButton:hover,
-.Button:hover {
+.NavButton a:hover {
     background-color: #275270;
     border-color: #275270;
 }
 
-.ButtonContainer {
+.Navigation {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    color: #fff;
 }
 
-.Button {
+.NavButton {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.NavButton a {
     background-color: #438bbd;
     border-radius: 0.35em;
+    text-decoration: none;
     color: #fff;
     padding: 5px;
     font-size: 1em;
@@ -83,10 +90,7 @@ li {
     margin-bottom: 10px;
     width: 100px;
     border: none;
-}
-
-.Button:focus {
-    outline: 0;
+    cursor: pointer;
 }
 
 .PhotoContainer {
