@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import {Link} from 'react-router-dom';
 
+// navigation bar consisting of three buttons with search terms
+// the buttons <Link>s to urls that will make the app update 
+// and retrieve the search term
 class Navigation extends Component {
     render() {
         return (

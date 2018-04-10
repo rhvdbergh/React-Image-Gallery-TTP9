@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+// message to show 404 error
 class ErrNoMatch extends Component {
     render() {
         return (

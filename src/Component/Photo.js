@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+// photos, nested in <li> tags
 class Photo extends Component {
     render() {
         return (
@@ -13,7 +14,7 @@ class Photo extends Component {
 
 Photo.propTypes = {
     photoURL: PropTypes.string.isRequired,
-    photoDescription: PropTypes.string
+    photoDescription: PropTypes.string // functions as alt property, description retrieved from Flickr
 }
 
 Photo.defaultProps = {
