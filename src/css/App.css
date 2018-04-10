@@ -1,0 +1,132 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    color: #3f4850;
+    margin: 50px 0 30px;
+    text-transform: capitalize;
+}
+
+h2 {
+    color: #3f4850;
+}
+
+button {
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: list-item;
+}
+
+.App {
+    text-align: center;
+}
+
+.SearchContainer {
+    margin: 32px auto 10px;
+    max-width: 460px;
+    display: flex;
+}
+
+.Search {
+    margin: 32px auto 32px;
+    width: 100%;
+    font-size: 1em;
+    background-color: #edeff0;
+    padding: 10px 15px;
+    border: 3px solid #d7dbdf;
+    border-right: none;
+    border-radius: 0.35em 0 0 0.35em;
+    outline: none;
+}
+
+.SearchButton {
+    padding: 10px 15px;
+    margin: 32px auto 32px;
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+    border-radius: 0 0.35em 0.35em 0;
+    background-color: #438bbd;
+    fill: #fff;
+    stroke: #fff;
+    stroke-width: 3;
+}
+
+.SearchButton:hover,
+.NavButton a:hover {
+    background-color: #275270;
+    border-color: #275270;
+    transform: scale(1.15);
+}
+
+.Navigation {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    color: #fff;
+}
+
+.NavButton {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.NavButton a {
+    background-color: #438bbd;
+    border-radius: 0.35em;
+    text-decoration: none;
+    color: #fff;
+    padding: 5px;
+    font-size: 1em;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 100px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.75s;
+}
+
+.PhotoContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    max-width: 960px;
+    margin: auto;
+}
+
+.PhotoContainer ul {
+    overflow: hidden;
+}
+
+.PhotoLi {
+    width: 220px;
+    height: 165px;
+    margin-bottom: 15px;
+    display: list-item;
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.Photo {
+    width: 100%;
+    transition: transform 0.75s;
+    transform-origin: 50% 50%;
+}
+
+.Photo:hover {
+    transform: scale(1.15);
+}
