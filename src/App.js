@@ -17,19 +17,19 @@ class App extends Component {
   }
 
 componentWillMount() {
-  this.setState({photos: this.getPhotos('Coffee')});
+  this.getPhotos('Coffee');
 }
 
 getPhotos(searchTerm) {
-    this.setState({title: searchTerm});
-    fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${searchTerm}&per_page=20&format=json&nojsoncallback=1`)
-    .then(response => {
-      return response.json();
-    })
-    .then(myJson => {
-      let arr = myJson.photos.photo;
-      this.setState({photos: arr});
-    });
+  this.setState({title: searchTerm});
+  fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${searchTerm}&per_page=20&format=json&nojsoncallback=1`)
+  .then(response => {
+    return response.json();
+  })
+  .then(myJson => {
+    let arr = myJson.photos.photo;
+    this.setState({photos: arr});
+  });
   }
 
   render() {
@@ -38,14 +38,13 @@ getPhotos(searchTerm) {
       <div className="App">
           <Switch>
             <Route exact path="/" 
-              render={this.state.photos? (props) => 
+              component={ () => 
                   <MainWindow 
                     getPhotos={this.getPhotos}
                     photos={this.state.photos} 
                     title={this.state.title}
                   />
-                  :
-                  () => <h1>Loading ...</h1>
+                  
               }   
             /> 
             <Route component={ErrNoMatch}/>
