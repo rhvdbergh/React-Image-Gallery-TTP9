@@ -69,7 +69,7 @@ constructor(props) {
   render() {
     return (
       <div>
-        <Search getPhotos={this.props.getPhotos}/>
+        <Search />
           <Navigation getPhotos={this.props.getPhotos}/>
         {this.props.photos.length? <Title title={this.props.title} /> : <Title title={`${this.props.title}: No results found`} noResults={true} />}
         <PhotoContainer photos={this.props.photos} />

@@ -7,12 +7,10 @@ class Search extends Component {
     constructor(props) {
         super(props);
         this.state={searchTerm: ''}
-        // this.getPhotos = this.props.getPhotos;
     }
 
     updateSearchTerm(e) {
         this.setState({searchTerm: e.target.value});
-        console.log('success');
     }
 
     updatePhotos(e) {
@@ -35,10 +33,6 @@ class Search extends Component {
             </form>
         )
     }
-}
-
-Search.propTypes = {
-    getPhotos: PropTypes.func.isRequired
 }
 
 export default withRouter(Search);
