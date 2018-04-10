@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 
@@ -17,6 +18,7 @@ class Search extends Component {
     updatePhotos(e) {
         e.preventDefault(); // to stop the page from loading and displaying the default photos
         this.getPhotos(this.state.searchTerm);
+        this.props.history.push(`/search/${this.state.searchTerm}`); // we have access to history because of withRouter
         e.currentTarget.reset();        
     }
 
@@ -40,4 +42,4 @@ Search.propTypes = {
     getPhotos: PropTypes.func.isRequired
 }
 
-export default Search;
+export default withRouter(Search);
