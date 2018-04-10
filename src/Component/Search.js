@@ -14,9 +14,11 @@ class Search extends Component {
 
     updatePhotos(e) {
         e.preventDefault(); // to stop the page from loading and displaying the default photos
-        // change the url by pushing to the history stack
-        this.props.history.push(`/search/${this.state.searchTerm}`); // note: we have access to history because of withRouter
-        e.currentTarget.reset(); // clear the search box       
+        if (this.state.searchTerm !== '') { // only update if there is something to search
+             // change the url by pushing to the history stack
+            this.props.history.push(`/search/${this.state.searchTerm}`); // note: we have access to history because of withRouter
+            e.currentTarget.reset(); // clear the search box    
+        }   
     }
 
     render() {
