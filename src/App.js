@@ -5,26 +5,26 @@ import Navigation from './Component/Navigation.js';
 import Title from './Component/Title.js';
 import PhotoContainer from './Component/PhotoContainer.js';
 import ErrNoMatch from './Component/ErrNoMatch.js';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import './css/App.css';
 import apiKey from './config.js';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {photos: [], title: 'Loading ...'};
+    this.state = {photos: [], title: 'Loading ...', loading: true};
     this.getPhotos = this.getPhotos.bind(this);
   }
 
 getPhotos(searchTerm) {
-  this.setState({title: searchTerm});
+  this.setState({title: searchTerm, loading: true});
   fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${searchTerm}&per_page=20&format=json&nojsoncallback=1`)
   .then(response => {
     return response.json();
   })
   .then(myJson => {
     let arr = myJson.photos.photo;
-    this.setState({photos: arr});
+    this.setState({photos: arr, loading: false});
   });
   }
 
@@ -38,6 +38,7 @@ getPhotos(searchTerm) {
                     getPhotos={this.getPhotos} 
                     photos={this.state.photos}
                     title={this.state.title}
+                    loading={this.state.loading}
                     {...props}
                   />
               }   
@@ -71,7 +72,7 @@ constructor(props) {
       <div>
         <Search />
           <Navigation getPhotos={this.props.getPhotos}/>
-        {this.props.photos.length? <Title title={this.props.title} /> : <Title title={`${this.props.title}: No results found`} noResults={true} />}
+          {this.props.loading? <h1>Loading ...</h1> : <Title title={this.props.title} />}
         <PhotoContainer photos={this.props.photos} />
       </div>
     );
@@ -81,7 +82,8 @@ constructor(props) {
 MainWindow.propTypes = {
   getPhotos: PropTypes.func.isRequired,
   photos: PropTypes.array.isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  loading: PropTypes.bool.isRequired
 }
 
 export default App;
