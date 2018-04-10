@@ -9,6 +9,11 @@ a {
 h1 {
     color: #3f4850;
     margin: 50px 0 30px;
+    text-transform: capitalize;
+}
+
+h2 {
+    color: #3f4850;
 }
 
 button {
