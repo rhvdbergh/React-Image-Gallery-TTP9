@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import Button from './Button';
@@ -21,4 +22,4 @@ Navigation.propTypes = {
     getPhotos: PropTypes.func.isRequired
 }
 
-export default Navigation;
+export default withRouter(Navigation);

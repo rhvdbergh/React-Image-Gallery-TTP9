@@ -10,8 +10,8 @@ import './css/App.css';
 import apiKey from './config.js';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {photos: [], title: 'Loading ...'};
     this.getPhotos = this.getPhotos.bind(this);
   }
@@ -30,7 +30,6 @@ getPhotos(searchTerm) {
 
   render() {
     return (
-      <BrowserRouter>
       <div className="App">
           <Switch>
             <Route exact path="/" render={() => <Redirect to="/search/coffee"/>}/>
@@ -46,15 +45,25 @@ getPhotos(searchTerm) {
             <Route component={ErrNoMatch}/>
           </Switch>
         </div>
-      </BrowserRouter>
     );
   }
 }
 
 class MainWindow extends Component {  
+constructor(props) {
+  super(props);
+  this.props.history.listen((location, action) => {
+  })
+}
 
   componentDidMount() {
     this.props.getPhotos(this.props.match.params.searchTerm);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.location !== prevProps.location) {
+    this.props.getPhotos(this.props.match.params.searchTerm);
+    }
   }
 
   render() {

@@ -7,7 +7,7 @@ class Search extends Component {
     constructor(props) {
         super(props);
         this.state={searchTerm: ''}
-        this.getPhotos = this.props.getPhotos;
+        // this.getPhotos = this.props.getPhotos;
     }
 
     updateSearchTerm(e) {
@@ -17,7 +17,6 @@ class Search extends Component {
 
     updatePhotos(e) {
         e.preventDefault(); // to stop the page from loading and displaying the default photos
-        this.getPhotos(this.state.searchTerm);
         this.props.history.push(`/search/${this.state.searchTerm}`); // we have access to history because of withRouter
         e.currentTarget.reset();        
     }
