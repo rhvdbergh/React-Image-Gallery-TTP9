@@ -22,7 +22,7 @@ class Photo extends Component {
         return (
             <li className="PhotoLi">
                 <img className="Photo" src={this.props.photoURL} alt={this.props.photoDescription} onClick={this.onOpenModal}/>  
-                <Modal open={this.state.open} onClose={this.onCloseModal} little>
+                <Modal open={this.state.open} onClose={this.onCloseModal} little showCloseIcon={false}>
                     <img src={largePhoto} alt={this.props.photoDescription}/>  
                 </Modal> 
             </li>         
