@@ -32,8 +32,8 @@ getPhotos(searchTerm) {
     return (
       <div className="App">
           <Switch>
-            <Route exact path="./" render={() => <Redirect to="./search/coffee"/>}/>
-            <Route path="./search/:searchTerm" render={ (props) => 
+            <Route exact path="./" render={() => <Redirect to="/search/coffee"/>}/>
+            <Route path="/search/:searchTerm" render={ (props) => 
                   <MainWindow
                     getPhotos={this.getPhotos} 
                     photos={this.state.photos}
